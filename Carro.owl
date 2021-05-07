@@ -1,0 +1,682 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/achev/ontologies/2020/11/CarroAutonomo"
+         xmlns="http://www.semanticweb.org/achev/ontologies/2020/11/CarroAutonomo#"
+         xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+         xmlns:swrl2="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/achev/ontologies/2020/11/CarroAutonomo"/>
+
+<owl:ObjectProperty rdf:about="#Adquiere">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:range rdf:resource="#Reputacion"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#Asigna">
+  <rdfs:domain rdf:resource="#Usuario"/>
+  <rdfs:range rdf:resource="#Experiencia"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#Conduce">
+  <rdfs:domain rdf:resource="#Conductor"/>
+  <rdfs:range rdf:resource="#Carro"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#Inicia">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:range rdf:resource="#Viaje"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#Interacciona">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:range rdf:resource="#Persona"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#Lleva">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:range rdf:resource="#Persona"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#Proporciona">
+  <rdfs:domain rdf:resource="#Usuario"/>
+  <rdfs:range rdf:resource="#Reputacion"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#Realiza">
+  <rdfs:domain rdf:resource="#Usuario"/>
+  <rdfs:range rdf:resource="#Viaje"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#Termina">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:range rdf:resource="#Viaje"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#Transita">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:range rdf:resource="#Carretera"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#Utiliza">
+  <rdfs:domain rdf:resource="#Confianza"/>
+  <rdfs:range rdf:resource="#Experiencia"/>
+  <rdfs:range rdf:resource="#Reputacion"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#Viaja">
+  <rdfs:domain rdf:resource="#Usuario"/>
+  <rdfs:range rdf:resource="#Carro"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#Asistencia_de_atasco">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:domain rdf:resource="#Sensores"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Ciudad_Origen">
+  <rdfs:domain rdf:resource="#Usuario"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Control_Crucero">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:domain rdf:resource="#Sensores"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Deteccion_de_fatiga">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:domain rdf:resource="#Sensores"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Disfrute_percibido">
+  <rdfs:domain rdf:resource="#Confianza"/>
+  <rdfs:domain rdf:resource="#Experiencia"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Edad">
+  <rdfs:domain rdf:resource="#Persona"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#FSD">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:domain rdf:resource="#Sensores"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Facilidad_percibida_de_uso">
+  <rdfs:domain rdf:resource="#Confianza"/>
+  <rdfs:domain rdf:resource="#Experiencia"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Freno_de_emergencia_autonomo">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:domain rdf:resource="#Sensores"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#GPS">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:domain rdf:resource="#Sensores"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Genero">
+  <rdfs:domain rdf:resource="#Usuario"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Historico_reputacion">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Iluminaciones_adaptables">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:domain rdf:resource="#Sensores"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Kilometraje">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#LIDAR">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:domain rdf:resource="#Sensores"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Marca_Carro">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Nivel_de_estudio">
+  <rdfs:domain rdf:resource="#Usuario"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Percepción_inicial">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Reconocimiento_de_señales_de_trafico">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:domain rdf:resource="#Sensores"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Reputacion_Carro">
+  <rdfs:domain>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Carro"/>
+        <rdf:Description rdf:about="#Reputacion"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#Sistema_de_estacionamiento">
+  <rdfs:domain rdf:resource="#Carro"/>
+  <rdfs:domain rdf:resource="#Sensores"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+
+<owl:Class rdf:about="#Carro"/>
+
+<owl:Class rdf:about="#Reputacion">
+  <rdfs:subClassOf rdf:resource="#Confianza"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Usuario">
+  <rdfs:subClassOf rdf:resource="#Persona"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Experiencia">
+  <rdfs:subClassOf rdf:resource="#Confianza"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Conductor">
+  <rdfs:subClassOf rdf:resource="#Persona"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Viaje"/>
+
+<owl:Class rdf:about="#Persona"/>
+
+<owl:Class rdf:about="#Carretera"/>
+
+<owl:Class rdf:about="#Confianza"/>
+
+<owl:Class rdf:about="#Sensores">
+  <rdfs:subClassOf rdf:resource="#Carro"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Camara_Carretera">
+  <rdfs:subClassOf rdf:resource="#Carretera"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Limite_de_velocidad">
+  <rdfs:subClassOf rdf:resource="#Carretera"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Linea_Continua">
+  <rdfs:subClassOf rdf:resource="#Linea_carretera"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Linea_carretera">
+  <rdfs:subClassOf rdf:resource="#Carretera"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Linea_Trazos">
+  <rdfs:subClassOf rdf:resource="#Linea_carretera"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Reporte">
+  <rdfs:subClassOf rdf:resource="#Carro"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Semaforo">
+  <rdfs:subClassOf rdf:resource="#Señal_de_trafico"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Señal_de_trafico">
+  <rdfs:subClassOf rdf:resource="#Carretera"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sensores_Carretera">
+  <rdfs:subClassOf rdf:resource="#Carretera"/>
+</owl:Class>
+
+<Usuario rdf:about="#Carlos">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Disfrute_percibido rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</Disfrute_percibido>
+  <Edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">29</Edad>
+  <Facilidad_percibida_de_uso rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</Facilidad_percibida_de_uso>
+  <Genero rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Masculino</Genero>
+  <Nivel_de_estudio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bachillerato</Nivel_de_estudio>
+</Usuario>
+
+<Usuario rdf:about="#David">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Disfrute_percibido rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</Disfrute_percibido>
+  <Edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</Edad>
+  <Facilidad_percibida_de_uso rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</Facilidad_percibida_de_uso>
+  <Genero rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Masculino</Genero>
+  <Nivel_de_estudio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bachillerato</Nivel_de_estudio>
+</Usuario>
+
+<Usuario rdf:about="#Erick">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Disfrute_percibido rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</Disfrute_percibido>
+  <Edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34</Edad>
+  <Facilidad_percibida_de_uso rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</Facilidad_percibida_de_uso>
+  <Genero rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Masculino</Genero>
+  <Nivel_de_estudio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bachillerato</Nivel_de_estudio>
+</Usuario>
+
+<Usuario rdf:about="#Esteban">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Disfrute_percibido rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</Disfrute_percibido>
+  <Edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</Edad>
+  <Facilidad_percibida_de_uso rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85</Facilidad_percibida_de_uso>
+  <Genero rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Masculino</Genero>
+  <Nivel_de_estudio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Magister</Nivel_de_estudio>
+</Usuario>
+
+<Usuario rdf:about="#Francy">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Disfrute_percibido rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85</Disfrute_percibido>
+  <Edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</Edad>
+  <Facilidad_percibida_de_uso rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</Facilidad_percibida_de_uso>
+  <Genero rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Femenino</Genero>
+  <Nivel_de_estudio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bachillerato</Nivel_de_estudio>
+</Usuario>
+
+<Usuario rdf:about="#Judith">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Disfrute_percibido rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">44</Disfrute_percibido>
+  <Edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42</Edad>
+  <Facilidad_percibida_de_uso rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</Facilidad_percibida_de_uso>
+  <Genero rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Femenino</Genero>
+  <Nivel_de_estudio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Profesional</Nivel_de_estudio>
+</Usuario>
+
+<Usuario rdf:about="#Nancy">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Disfrute_percibido rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">39</Disfrute_percibido>
+  <Edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48</Edad>
+  <Facilidad_percibida_de_uso rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</Facilidad_percibida_de_uso>
+  <Genero rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Femenino</Genero>
+  <Nivel_de_estudio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Primaria</Nivel_de_estudio>
+</Usuario>
+
+<Usuario rdf:about="#Natalia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Disfrute_percibido rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</Disfrute_percibido>
+  <Edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">29</Edad>
+  <Facilidad_percibida_de_uso rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</Facilidad_percibida_de_uso>
+  <Genero rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Femenino</Genero>
+  <Nivel_de_estudio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bachillerato</Nivel_de_estudio>
+</Usuario>
+
+<Carro rdf:about="#RTY456">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Inicia rdf:resource="#carrera_27_con_calle_9"/>
+  <Lleva rdf:resource="#Erick"/>
+  <Lleva rdf:resource="#jfg"/>
+  <Lleva rdf:resource="#fgh"/>
+  <Lleva rdf:resource="#fg"/>
+  <Termina rdf:resource="#carrera_27_con_calle_34"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En ningun momento llegue a sentir inseguridad. Autor:David</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Logre realizar otras tareas mientras el carro conducia pero me sentia un poco insegura. Autor:Natalia</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No existo ningun percance durante el viaje. Autor:Erick</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No logro captar determinados momentos. Autor:Carlos</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bello. Autor:Erick</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lindo. Autor:David</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">titi. Autor:Carlos</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tito. Autor:Natalia</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biti. Autor:Erick</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dh. Autor:jfg</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">khj. Autor:fgh</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fgh. Autor:fg</rdfs:comment>
+  <Asistencia_de_atasco rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Asistencia_de_atasco>
+  <Control_Crucero rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Control_Crucero>
+  <Deteccion_de_fatiga rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Deteccion_de_fatiga>
+  <FSD rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</FSD>
+  <Freno_de_emergencia_autonomo rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Freno_de_emergencia_autonomo>
+  <GPS rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</GPS>
+  <Historico_reputacion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</Historico_reputacion>
+  <Iluminaciones_adaptables rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Iluminaciones_adaptables>
+  <LIDAR rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</LIDAR>
+  <Marca_Carro rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tesla</Marca_Carro>
+  <Percepción_inicial rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</Percepción_inicial>
+  <Reconocimiento_de_señales_de_trafico rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Reconocimiento_de_señales_de_trafico>
+  <Reputacion_Carro rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</Reputacion_Carro>
+  <Sistema_de_estacionamiento rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Sistema_de_estacionamiento>
+</Carro>
+
+<Carretera rdf:about="#carrera_27_con_calle_9">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Viaje"/>
+</Carretera>
+
+<Usuario rdf:about="#jfg">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Disfrute_percibido rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</Disfrute_percibido>
+  <Edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">456</Edad>
+  <Facilidad_percibida_de_uso rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</Facilidad_percibida_de_uso>
+  <Genero rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dfhf</Genero>
+  <Nivel_de_estudio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dfh</Nivel_de_estudio>
+</Usuario>
+
+<Usuario rdf:about="#fgh">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Disfrute_percibido rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</Disfrute_percibido>
+  <Edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45</Edad>
+  <Facilidad_percibida_de_uso rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</Facilidad_percibida_de_uso>
+  <Genero rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fgh</Genero>
+  <Nivel_de_estudio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hfg</Nivel_de_estudio>
+</Usuario>
+
+<Carretera rdf:about="#carrera_27_con_calle_34">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Viaje"/>
+</Carretera>
+
+<Conductor rdf:about="#Raul">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Conduce rdf:resource="#RTY456"/>
+  <Conduce rdf:resource="#WE234"/>
+  <Conduce rdf:resource="#ZX1922"/>
+</Conductor>
+
+<Carro rdf:about="#WE234">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Inicia rdf:resource="#carrera_27_con_calle_9"/>
+  <Lleva rdf:resource="#Francy"/>
+  <Lleva rdf:resource="#Nancy"/>
+  <Termina rdf:resource="#carrera_27_con_calle_20"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El vehiculo logro evitar un accidente. Autor:Francy</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En algun momento del viaje senti inseguridad. Autor:Nancy</rdfs:comment>
+  <Asistencia_de_atasco rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Asistencia_de_atasco>
+  <Control_Crucero rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Control_Crucero>
+  <Deteccion_de_fatiga rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Deteccion_de_fatiga>
+  <FSD rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</FSD>
+  <Freno_de_emergencia_autonomo rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Freno_de_emergencia_autonomo>
+  <GPS rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</GPS>
+  <Historico_reputacion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">73</Historico_reputacion>
+  <Iluminaciones_adaptables rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Iluminaciones_adaptables>
+  <LIDAR rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</LIDAR>
+  <Marca_Carro rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Seat</Marca_Carro>
+  <Percepción_inicial rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</Percepción_inicial>
+  <Reconocimiento_de_señales_de_trafico rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Reconocimiento_de_señales_de_trafico>
+  <Reputacion_Carro rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">37</Reputacion_Carro>
+  <Sistema_de_estacionamiento rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Sistema_de_estacionamiento>
+</Carro>
+
+<Carro rdf:about="#ZX1922">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Inicia rdf:resource="#carrera_27_con_calle_9"/>
+  <Lleva rdf:resource="#Esteban"/>
+  <Lleva rdf:resource="#Judith"/>
+  <Termina rdf:resource="#carrera_27_con_calle_56"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El uso del vehiculo es bastante intuitivo. Autor:Judith</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Me senti muy comodo durante el viaje, recomendaria el uso del vehiculo autonomo. Autor:Esteban</rdfs:comment>
+  <Asistencia_de_atasco rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Asistencia_de_atasco>
+  <Control_Crucero rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Control_Crucero>
+  <Deteccion_de_fatiga rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Deteccion_de_fatiga>
+  <FSD rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</FSD>
+  <Freno_de_emergencia_autonomo rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Freno_de_emergencia_autonomo>
+  <GPS rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</GPS>
+  <Historico_reputacion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">77</Historico_reputacion>
+  <Iluminaciones_adaptables rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Iluminaciones_adaptables>
+  <LIDAR rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</LIDAR>
+  <Marca_Carro rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Renault</Marca_Carro>
+  <Percepción_inicial rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</Percepción_inicial>
+  <Reconocimiento_de_señales_de_trafico rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Reconocimiento_de_señales_de_trafico>
+  <Reputacion_Carro rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38</Reputacion_Carro>
+  <Sistema_de_estacionamiento rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Sistema_de_estacionamiento>
+</Carro>
+
+<Carretera rdf:about="#carrera_27_con_calle_20">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Viaje"/>
+</Carretera>
+
+<Carretera rdf:about="#carrera_27_con_calle_56">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Viaje"/>
+</Carretera>
+
+<swrl:Variable rdf:about="#c"/>
+
+<swrl:Variable rdf:about="#r"/>
+
+<swrl:Variable rdf:about="#rc"/>
+
+<swrl:Variable rdf:about="#p"/>
+
+<swrl:Variable rdf:about="#g"/>
+
+<Usuario rdf:about="#fg">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <Disfrute_percibido rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</Disfrute_percibido>
+  <Edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">456</Edad>
+  <Facilidad_percibida_de_uso rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</Facilidad_percibida_de_uso>
+  <Genero rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fgh</Genero>
+  <Nivel_de_estudio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fgh</Nivel_de_estudio>
+</Usuario>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Carro"/>
+          <swrl:argument1 rdf:resource="#c"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#Reputacion_Carro"/>
+              <swrl:argument1 rdf:resource="#c"/>
+              <swrl:argument2 rdf:resource="#r"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:BuiltinAtom>
+          <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#max"/>
+          <swrl:arguments>
+            <rdf:Description>
+              <rdf:first rdf:resource="#r"/>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+          </swrl:arguments>
+        </swrl:BuiltinAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Entrega la reputacion mayor que posee un carro</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maximo</rdfs:label>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Carro"/>
+          <swrl:argument1 rdf:resource="#c"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#Reputacion_Carro"/>
+              <swrl:argument1 rdf:resource="#c"/>
+              <swrl:argument2 rdf:resource="#rc"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:BuiltinAtom>
+                  <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                  <swrl:arguments>
+                    <rdf:List>
+                      <rdf:first rdf:resource="#rc"/>
+                      <rdf:rest>
+                        <rdf:List>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</rdf:first>
+                        </rdf:List>
+                      </rdf:rest>
+                    </rdf:List>
+                  </swrl:arguments>
+                </swrl:BuiltinAtom>
+              </rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:BuiltinAtom>
+          <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+          <swrl:arguments>
+            <rdf:Description>
+              <rdf:first rdf:resource="#c"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="#rc"/>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </swrl:arguments>
+        </swrl:BuiltinAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Arroja como resultado el carro que tenga una reputación mayor a 40</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reputacion_Alta</rdfs:label>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Persona"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:IndividualPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#Conduce"/>
+              <swrl:argument1 rdf:resource="#p"/>
+              <swrl:argument2 rdf:resource="#g"/>
+            </swrl:IndividualPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:BuiltinAtom>
+          <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+          <swrl:arguments>
+            <rdf:Description>
+              <rdf:first rdf:resource="#p"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="#g"/>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </swrl:arguments>
+        </swrl:BuiltinAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Que persona es la que conduce los carros</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conduce</rdfs:label>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Carro"/>
+          <swrl:argument1 rdf:resource="#c"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:BuiltinAtom>
+          <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#count"/>
+          <swrl:arguments>
+            <rdf:Description>
+              <rdf:first rdf:resource="#c"/>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+          </swrl:arguments>
+        </swrl:BuiltinAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cuenta todos los carros que hay en el momento</rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conteo</rdfs:label>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+</swrl:Imp>
+
+
+</rdf:RDF>
